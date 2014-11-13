@@ -30,15 +30,21 @@ class FacebookOAuthToken extends OAuthToken {
     public static final String PROVIDER_NAME = 'facebook'
 
     String profileId
+    String emailSocial
 
-    FacebookOAuthToken(Token accessToken, String profileId) {
+    FacebookOAuthToken(Token accessToken, String profileId,String emailSocial = "") {
         super(accessToken)
         this.profileId = profileId
         this.principal = profileId
+        this.emailSocial = emailSocial
     }
 
-    String getSocialId() {
+    String getSocialId()
+    {
         return profileId
+    }
+    String getSocialEmail(){
+        return emailSocial
     }
 
     String getScreenName() {

@@ -38,7 +38,7 @@ class FacebookSpringSecurityOAuthService {
             log.error "No user id from Facebook. Response:\n${response.body}"
             throw new OAuthLoginException("No user id from Facebook")
         }
-        return new FacebookOAuthToken(accessToken, user.id)
+        return new FacebookOAuthToken(accessToken, user.id, user.eamil)
     }
 
 }
